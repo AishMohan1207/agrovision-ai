@@ -78,8 +78,7 @@ def predict():
         print("Error in /predict:", e)
         return jsonify({"error": str(e)}), 500
     
-    #index route
-    
+#index route   
 @app.route("/")
 def index():
     return send_from_directory(
@@ -90,4 +89,5 @@ def index():
 # ---------------- Main ----------------
 if __name__ == "__main__":
     print("Server starting...")
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render automatically sets PORT
+    app.run(host="0.0.0.0", port=port)
