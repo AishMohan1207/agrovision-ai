@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("http://127.0.0.1:5000/predict", {
+    fetch("http://agrovisionai.pythonanywhere.com/predict", {
       method: "POST",
       body: formData
     })
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const selectedQA = document.getElementById("qaSelect").value;
     const selectedLang = document.getElementById("langSelect").value;
 
-    fetch("http://127.0.0.1:5000/get_answer", {
+    fetch("http://agrovisionai.pythonanywhere.com/get_answer", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({qid: selectedQA, lang: selectedLang})
