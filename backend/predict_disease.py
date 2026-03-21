@@ -4,6 +4,7 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 import cv2
 import os
+os.environ['TF_USE_LEGACY_KERAS'] = '1'
 
 # Load trained model
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
