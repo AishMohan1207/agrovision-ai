@@ -1,12 +1,11 @@
+import os
+os.environ['TF_USE_LEGACY_KERAS'] = '1'
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import cv2
-import os
-os.environ["KERAS_BACKEND"] = "tensorflow"
-import tf_keras as keras
-from tf_keras.models import load_model
+
 # Load trained model
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model = load_model(os.path.join(BASE_DIR, "model", "plant_model.h5"))
