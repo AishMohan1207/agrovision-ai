@@ -1,5 +1,4 @@
 import os
-os.environ['TF_USE_LEGACY_KERAS'] = '1'
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
@@ -8,8 +7,10 @@ import cv2
 
 # Load trained model
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model = load_model(os.path.join(BASE_DIR, "model", "plant_model.h5"))
-
+model = load_model(
+    os.path.join(BASE_DIR, "model", "plant_model.h5"),
+    compile=False
+)
 # Class labels
 classes = [
     "tomato_healthy",
